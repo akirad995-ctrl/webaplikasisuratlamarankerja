@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #7955d9;
+    --primary-dark: #5838b0;
+    --lavender: #eee8ff;
+    --ink: #29243e;
+    --muted: #817b95;
+    --border: #e8e2f2;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, #eee6ff, transparent 38%),
+        #f8f7fc;
+    min-height: 100vh;
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 48px 20px 55px;
+    color: white;
+    background: linear-gradient(135deg, #30204f, #6747bd 65%, #9579e8);
+}
+
+.logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: #d9caff;
+}
+
+.hero p {
+    margin-top: 8px;
+    color: #e7ddff;
+    font-size: 15px;
+}
+
+.hero-badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7px 15px;
+    border: 1px solid #ffffff35;
+    border-radius: 50px;
+    background: #ffffff12;
+    color: #f2edff;
+    font-size: 12px;
+}
+
+/* MAIN LAYOUT */
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    max-width: 1300px;
+    margin: 35px auto;
+    padding: 0 25px;
+    align-items: start;
+}
+
+.form-container,
+.preview-container {
+    min-width: 0;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 12px 40px #38245d0b;
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 24px;
+}
+
+.section-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: var(--lavender);
+    color: var(--primary-dark);
+    font-size: 24px;
+}
+
+.section-heading h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* FORM */
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #49415f;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #fcfbff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa4bb;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #9679e8;
+    box-shadow: 0 0 0 4px #7654d81a;
+    background: white;
+}
+
+textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.field-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.field-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--border);
+}
+
+input[type="file"] {
+    padding: 9px;
+    background: #faf8ff;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 8px 10px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 7px;
+    background: var(--lavender);
+    color: var(--primary-dark);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* BUTTONS */
+
+button {
+    border: none;
+    border-radius: 11px;
+    padding: 12px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s, background .2s, box-shadow .2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #8563e5, #6341bd);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 6px 16px #7654d833;
+}
+
+.btn-secondary {
+    background: #eee8fa;
+    color: #6249a7;
+}
+
+.btn-secondary:hover {
+    background: #ded3f5;
+}
+
+form > .btn-primary {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* PHOTO */
+
+.foto-preview {
+    display: block;
+    width: 110px;
+    height: 140px;
+    margin-top: 12px;
+    border: 3px solid white;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 3px 15px #38245d18;
+}
+
+/* SIGNATURE */
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#signaturePad {
+    display: block;
+    width: 100%;
+    height: 150px;
+    border: 1px dashed #c5b5ef;
+    border-radius: 12px;
+    background: #fdfbff;
+    touch-action: none;
+    cursor: crosshair;
+}
+
+#hapusTtd {
+    margin-top: 10px;
+}
+
+/* LETTER PREVIEW */
+
+.preview-container {
+    background: #f0edf8;
+    border-color: #e8e1f6;
+}
+
+.surat {
+    min-height: 570px;
+    padding: 32px;
+    border: 1px solid #e7e2ee;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    box-shadow: 0 8px 25px #30224f0c;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.surat p {
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+}
+
+.surat .judul {
+    margin: 24px 0;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.surat .petunjuk {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    text-align: center;
+}
+
+.empty-state {
+    padding: 75px 15px;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.empty-icon {
+    display: grid;
+    place-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+    border-radius: 22px;
+    background: var(--lavender);
+    color: var(--primary);
+    font-size: 32px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.empty-state p {
+    max-width: 250px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.ttd-surat {
+    display: block;
+    width: 160px;
+    max-height: 85px;
+    margin-bottom: 5px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.foto-lampiran {
+    display: block;
+    width: 110px;
+    max-height: 145px;
+    margin: 12px 0;
+    object-fit: contain;
+}
+
+/* ACTIONS */
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.actions button {
+    flex: 1;
+    min-width: 120px;
+}
+
+.privacy-note {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 24px 16px;
+    background: #30204f;
+    color: #ded5f8;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+    main {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+    .hero {
+        padding: 35px 16px 40px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 12px;
+        gap: 16px;
+    }
+
+    .form-container,
+    .preview-container {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .surat {
+        min-height: 420px;
+        padding: 20px 16px;
+        font-size: 13px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
+
+/* PRINT / SAVE PDF */
+
+@media print {
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    body {
+        background: white;
+    }
+
+    .hero,
+    footer,
+    .form-container,
+    .preview-container > .section-heading,
+    .actions,
+    .privacy-note {
+        display: none !important;
+    }
+
+    main {
+        display: block;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+    .preview-container {
+        padding: 0;
+        border: none;
+        background: white;
+        box-shadow: none;
+    }
+
+    .surat {
+        min-height: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        font-size: 12pt;
+    }
+}
